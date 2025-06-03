@@ -1,5 +1,3 @@
-import React, { useEffect } from "react";
-
 const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   return (
     <div
