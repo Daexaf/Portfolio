@@ -7,9 +7,16 @@ const About = () => {
     "Vue",
     "TypeScript",
     "TailwindCSS",
-    "Svelte",
+    "Angular",
+    "React Native",
   ];
-  const backendSkills = ["Java", "C#", ".NET", "GO", "Python"];
+  const backendSkills = ["Java", "C#", ".NET", "PHP", "Laravel", "Go"];
+  const certification = [
+    "Junior Web Programming - BNSP",
+    "Responsive Web - FreeCodeCamp",
+    "Programming - Digitalent",
+    "Bank Jago: UI/UX Challenge",
+  ];
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -96,6 +103,22 @@ const About = () => {
                         <span
                           key={key}
                           className="bg-cyan-500/10 text-cyan-400 py-1 px-3 rounded-full text-sm border border-cyan-500/20 hover:bg-cyan-500/20 hover:shadow-[0_2px_8px_rgba(34,211,238,0.2)] transition-all duration-200"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl p-6 bg-gray-800/20 hover:-translate-y-1 hover:bg-gray-800/40 transition-all duration-300">
+                    <h3 className="text-xl font-bold mb-4 text-blue-400">
+                      Certification
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {certification.map((tech, key) => (
+                        <span
+                          key={key}
+                          className="bg-blue-500/10 text-blue-400 py-1 px-3 rounded-full text-sm border border-blue-500/20 hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all duration-200"
                         >
                           {tech}
                         </span>
