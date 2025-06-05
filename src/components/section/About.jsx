@@ -47,12 +47,24 @@ const About = () => {
           <RevealOnScroll delay={200}>
             <div className="reveal-container">
               <div className="rounded-xl p-8 bg-gray-800/30 border-white/10 border hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_12px_rgba(59,130,246,0.1)] transition-all duration-300">
+                <div className="flex justify-center mb-4">
+                  <img
+                    src="/assets/images/photo.jpeg"
+                    alt="..."
+                    className="w-[300px] h-[300px] rounded-full object-cover border-2 border-blue-500 shadow-md"
+                  />
+                </div>
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  Passionate full-stack developer with expertise in modern web
-                  technologies. I enjoy creating efficient, scalable
-                  applications and learning new technologies. My experience
-                  spans from frontend frameworks to backend services, always
-                  focusing on clean code and user experience.
+                  My name is Muhammad Ihsan, a Full-stack Developer specializing
+                  in frontend and backend development. I work with technologies
+                  like React.js, Laravel (PHP), and Java Spring Boot, as well as
+                  Golang, C#, and .NET. I have hands-on experience building
+                  scalable web and mobile applications using React Native. I'm
+                  also skilled in UI/UX design and have developed
+                  finance-related features and reporting systems using Crystal
+                  Reports. With a strong focus on performance, security, and
+                  user experience, I aim to deliver clean, maintainable code and
+                  seamless interfaces across platforms.
                 </p>
 
                 {/* Skills section */}

@@ -4,8 +4,9 @@ html, body{
   margin:0;
   padding:0;
   font-family: "Space Grotesk", sans-serif;
-  background: #0a0a0a;
+  background: red;
   color: #f3f4f6;
+  width: auto;
 }
 
 @layer utilities{
@@ -45,4 +46,15 @@ html, body{
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media(max-width:600px){
+  html, body{
+  margin:0;
+  padding:0;
+  font-family: "Space Grotesk", sans-serif;
+  background: #101828;
+  color: #f3f4f6;
+  width: max-content;
+}
 }
