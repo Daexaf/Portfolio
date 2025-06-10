@@ -36,11 +36,11 @@ const About = () => {
     "Crystal Report",
   ];
 
-  const [showBm1Details, setShowBm1Details] = useState(false);
-  const [showEnigmaDetails, setShowEnigmaDetails] = useState(false);
-  const [showLingvoDetails, setShowLingvoDetails] = useState(false);
-  const [showLepkomDetails, setShowLepkomDetails] = useState(false);
-  const [showNoidDetails, setShowNoidDetails] = useState(false);
+  const [visibleDetail, setVisibleDetail] = useState(null);
+
+  const toggle = (id) => {
+    setVisibleDetail((prev) => (prev === id ? null : id));
+  };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -186,7 +186,7 @@ const About = () => {
           </RevealOnScroll>
 
           {/* Education and Experience section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div className="space-y-8 mt-8">
             {/* Education */}
             <RevealOnScroll delay={400}>
               <div className="reveal-container">
@@ -199,17 +199,88 @@ const About = () => {
                       <h4 className="font-semibold text-white">
                         Bachelor in Computer Science
                       </h4>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-gray-400 text-sm mb-2">
                         Gunadarma University (Jun 2019 - Sep 2023)
                       </p>
+                      <p className="text-gray-300">GPA: 3.87 / 4.OO</p>
+                      {visibleDetail === "gunadarma" && (
+                        <ul className="list-disc text-sm mt-2 pl-5 text-gray-400 space-y-1">
+                          <li>
+                            Completed and certified in BNPS Web Junior,
+                            proficiency in junior web.
+                          </li>
+                          <li>
+                            Participated and graduated from the MBKM GIGIH 2.0
+                            program by YABB in the frontend track.
+                          </li>
+                          <li>
+                            Participated and graduated from the MBKM UI/UX
+                            Design Mastery program by Skilvul.
+                          </li>
+                          <li>
+                            Developed a reservation website project as part of a
+                            scientific writing assignment.
+                          </li>
+                          <li>
+                            Created an ordering and payment website for Sop
+                            Duren 97 restaurant as a thesis project.
+                          </li>
+                          <li>
+                            Attended various training programs, seminars, and
+                            certifications.
+                          </li>
+                        </ul>
+                      )}
+                      <button
+                        onClick={() => toggle("gunadarma")}
+                        className="text-cyan-400 text-sm mt-2 cursor-pointer"
+                      >
+                        {visibleDetail === "gunadarma"
+                          ? "Show less"
+                          : "Show more"}
+                      </button>
                     </div>
                     <div>
                       <h4 className="font-semibold text-white">
                         UI/UX Design Mastery By Skilvul
                       </h4>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-gray-400 text-sm mb-2">
                         Certificate in UI/UX Student (Aug 2022 - Dec 2022)
                       </p>
+                      <p className="text-gray-300">Apprenticeship</p>
+                      {visibleDetail === "skilvul" && (
+                        <ul className="list-disc text-sm mt-2 pl-5 text-gray-400 space-y-1">
+                          <li>
+                            Conducted a UX case study for Bank Jago App,
+                            analyzing user experience and proposing new feature
+                            enhancements.
+                          </li>
+                          <li>
+                            Designed and developed an interactive prototype for
+                            the Bank Jago App, improving usability and
+                            functionality.
+                          </li>
+                          <li>
+                            Studied and applied UI/UX principles, including user
+                            research, wireframing, prototyping, usability
+                            testing, and design thinking, to enhance digital
+                            product experiences.
+                          </li>
+                          <li>
+                            Designed and created a high-fidelity mobile
+                            application called Kursus.In, focusing on a seamless
+                            user interface and experience.
+                          </li>
+                        </ul>
+                      )}
+                      <button
+                        onClick={() => toggle("skilvul")}
+                        className="text-cyan-400 text-sm mt-2 cursor-pointer"
+                      >
+                        {visibleDetail === "skilvul"
+                          ? "Show less"
+                          : "Show more"}
+                      </button>
                     </div>
                     <div>
                       <h4 className="font-semibold text-white">
@@ -219,6 +290,46 @@ const About = () => {
                         Certificate in Frontend Track Student (Feb 2022 - Aug
                         2022)
                       </p>
+                      <p className="text-gray-300">Apprenticeship</p>
+                      {visibleDetail === "gigih" && (
+                        <ul className="list-disc text-sm mt-2 pl-5 text-gray-400 space-y-1">
+                          <li>
+                            Led the team in the development of a final project,
+                            delivering a fully functional website that was
+                            successfully uploaded and launched for public use.
+                          </li>
+                          <li>
+                            Spearheaded the creation of Usahakuy.id, a web
+                            platform built using React, emphasizing responsive
+                            design, performance optimization, and seamless user
+                            experience.
+                          </li>
+                          <li>
+                            Studied and applied Frontend Web Development
+                            principles, including UI/UX design, state
+                            management, component-based architecture, and web
+                            performance optimization.
+                          </li>
+                          <li>
+                            Explored and implemented modern web technologies,
+                            such as React Hooks, API integrations, and CSS
+                            frameworks, to enhance functionality and
+                            maintainability.
+                          </li>
+                          <li>
+                            Completed an English language learning course and
+                            earned a certificate, demonstrating improved
+                            proficiency in both written and spoken
+                            communication.
+                          </li>
+                        </ul>
+                      )}
+                      <button
+                        onClick={() => toggle("gigih")}
+                        className="text-cyan-400 text-sm mt-2 cursor-pointer"
+                      >
+                        {visibleDetail === "gigih" ? "Show less" : "Show more"}
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -244,31 +355,65 @@ const About = () => {
                         Led internal system development for 13 branches, focused
                         on reporting tools and infrastructure optimization.
                       </p>
-                      {showBm1Details && (
+                      {visibleDetail === "bm1" && (
                         <ul className="list-disc text-sm mt-2 pl-5 text-gray-400 space-y-1">
                           <li>
-                            Built and maintained financial modules (AR, AP,
-                            Taxation, Coretax).
+                            Led the development and maintenance of internal
+                            company applications, including bug fixes and new
+                            feature implementations, with minimal supervision.
                           </li>
                           <li>
-                            Managed and secured company website & internal
-                            applications.
+                            Designed, developed, and managed the company's
+                            website and web-based applications, ensuring high
+                            performance, security, and an optimized user
+                            experience.
                           </li>
                           <li>
-                            Collaborated with leadership on strategic IT
-                            decisions.
+                            Built and managed comprehensive reporting systems to
+                            support data-driven decision-making across multiple
+                            departments.
                           </li>
                           <li>
-                            Ensured high security and performance across
-                            infrastructure.
+                            Developed and maintained financial reporting
+                            features, including Account Receivable (AR), Account
+                            Payable (AP), taxation, and Coretax management,
+                            ensuring regulatory compliance and operational
+                            efficiency.
+                          </li>
+                          <li>
+                            Managed and optimized internal applications across
+                            13 company branches nationwide, ensuring high system
+                            performance, security, and reliability.
+                          </li>
+                          <li>
+                            Administered and maintained network infrastructure
+                            and IT equipment across headquarters and branch
+                            offices to ensure system security and optimal
+                            performance.
+                          </li>
+                          <li>
+                            Worked closely with management for strategic IT
+                            decisions, while independently handling daily IT
+                            operations and technical implementations.
+                          </li>
+                          <li>
+                            Implemented best practices in database management,
+                            application security, and system performance
+                            optimization to ensure scalability, efficiency, and
+                            long-term reliability.
+                          </li>
+                          <li>
+                            Created and managed the company’s main website,
+                            ensuring consistent branding, functionality, and SEO
+                            optimization.
                           </li>
                         </ul>
                       )}
                       <button
-                        onClick={() => setShowBm1Details(!showBm1Details)}
+                        onClick={() => toggle("bm1")}
                         className="text-cyan-400 text-sm mt-2 cursor-pointer"
                       >
-                        {showBm1Details ? "Show less" : "Show more"}
+                        {visibleDetail === "bm1" ? "Show less" : "Show more"}
                       </button>
                     </div>
                     <div className="border-l-2 border-cyan-500 pl-4">
@@ -279,10 +424,11 @@ const About = () => {
                         Enigma Camp (Nov 2023 - May 2024)
                       </p>
                       <p className="text-gray-300">
-                        Completed fullstack training focused on modern
-                        development stacks and real-world project delivery.
+                        Completed full-stack training focused on modern
+                        development stacks, real-world project delivery, and IT
+                        talent development.
                       </p>
-                      {showEnigmaDetails && (
+                      {visibleDetail === "enigma" && (
                         <ul className="list-disc text-sm mt-2 pl-5 text-gray-400 space-y-1">
                           <li>Developed backend APIs with Java Spring Boot.</li>
                           <li>
@@ -297,12 +443,52 @@ const About = () => {
                         </ul>
                       )}
                       <button
-                        onClick={() => setShowEnigmaDetails(!showEnigmaDetails)}
-                        className="text-cyan-400 text-sm mt-2"
+                        onClick={() => toggle("enigma")}
+                        className="text-cyan-400 text-sm mt-2 cursor-pointer"
                       >
-                        {showEnigmaDetails ? "Show less" : "Show more"}
+                        {visibleDetail === "enigma" ? "Show less" : "Show more"}
                       </button>
                     </div>
+
+                    <div className="border-l-2 border-purple-300 pl-4">
+                      <h4 className="font-semibold text-white">
+                        Web Developer
+                      </h4>
+                      <p className="text-gray-400 text-sm mb-2">
+                        Lingvo (Dec 2022 - Mar 2023)
+                      </p>
+                      <p className="text-gray-300">Developing E-Learning</p>
+                      {visibleDetail === "lingvo" && (
+                        <ul className="list-disc text-sm mt-2 pl-5 text-gray-400 space-y-1">
+                          <li>
+                            Developed custom pages for Lingvo students to
+                            facilitate learning using JavaScript and Velo by Wix
+                          </li>
+                          <li>
+                            Built and integrated web features, including a quiz
+                            system, to enhance the learning experience for
+                            users.
+                          </li>
+                          <li>
+                            Created and populated content for the Lingvo
+                            website, ensuring up-to-date and relevant materials
+                            for students.
+                          </li>
+                          <li>
+                            Managed class bookings and payments through the
+                            website, streamlining the process for both students
+                            and instructors.
+                          </li>
+                        </ul>
+                      )}
+                      <button
+                        onClick={() => toggle("lingvo")}
+                        className="text-cyan-400 text-sm mt-2 cursor-pointer"
+                      >
+                        {visibleDetail === "lingvo" ? "Show less" : "Show more"}
+                      </button>
+                    </div>
+
                     <div className="border-l-2 border-green-300 pl-4">
                       <h4 className="font-semibold text-white">
                         Teaching Assistant
@@ -314,7 +500,7 @@ const About = () => {
                       <p className="text-gray-300">
                         Assisted tutors in delivering technical training
                       </p>
-                      {showLepkomDetails && (
+                      {visibleDetail === "lepkom" && (
                         <ul className="list-disc text-sm mt-2 pl-5 text-gray-400 space-y-1">
                           <li>
                             Developed and prepared teaching materials to support
@@ -336,10 +522,50 @@ const About = () => {
                         </ul>
                       )}
                       <button
-                        onClick={() => setShowLepkomDetails(!showLepkomDetails)}
-                        className="text-cyan-400 text-sm mt-2"
+                        onClick={() => toggle("lepkom")}
+                        className="text-cyan-400 text-sm mt-2 cursor-pointer"
                       >
-                        {showLepkomDetails ? "Show less" : "Show more"}
+                        {visibleDetail === "lepkom" ? "Show less" : "Show more"}
+                      </button>
+                    </div>
+
+                    <div className="border-l-2 border-yellow-300 pl-4">
+                      <h4 className="font-semibold text-white">
+                        Frontend Web Developer
+                      </h4>
+                      <p className="text-gray-400 text-sm mb-2">
+                        Internship (Sep 2017 - Dec 2017)
+                      </p>
+                      <p className="text-gray-300">Redesign website frontend</p>
+                      {visibleDetail === "noid" && (
+                        <ul className="list-disc text-sm mt-2 pl-5 text-gray-400 space-y-1">
+                          <li>
+                            Designed and developed web interfaces using Adobe
+                            Photoshop, focusing on user-friendly layouts and
+                            responsive design principles.
+                          </li>
+                          <li>
+                            Edited and refined digital assets with Adobe
+                            Illustrator, ensuring high-quality visuals and
+                            consistent branding across platforms.
+                          </li>
+                          <li>
+                            Assisted in maintaining and optimizing client
+                            websites built with CodeIgniter, improving
+                            performance, security, and scalability.
+                          </li>
+                          <li>
+                            Worked on front-end development tasks, applying
+                            HTML, CSS, JavaScript, and Bootstrap to improve
+                            website aesthetics and interactivity.
+                          </li>
+                        </ul>
+                      )}
+                      <button
+                        onClick={() => toggle("noid")}
+                        className="text-cyan-400 text-sm mt-2 cursor-pointer"
+                      >
+                        {visibleDetail === "noid" ? "Show less" : "Show more"}
                       </button>
                     </div>
                   </div>
