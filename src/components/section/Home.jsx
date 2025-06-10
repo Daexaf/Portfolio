@@ -30,17 +30,21 @@ const Home = () => {
           {/* Buttons with responsive layout */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 px-4">
             <a
-              href="#projects"
+              href="https://drive.google.com/file/d/1wspaGC2b89Xb5K9mKDJL9_syoSkCl0wk/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-blue-500 text-white py-3 px-6 rounded font-medium transition-all duration-200 relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,_130,_246,_0.4)] text-center"
             >
-              View Projects
+              <span className="mr-2">📄</span>Download CV
             </a>
 
             <a
-              href="#contact"
+              href="https://drive.google.com/file/d/13A2itCezMcfZ2RhhUuuI9xS01McTtTRN/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="border border-blue-500/50 text-blue-500 py-3 px-6 rounded font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,_130,_246,_0.2)] hover:bg-blue-500/10 text-center"
             >
-              Contact Me
+              <span className="mr-2">💼</span>Open Portfolio
             </a>
           </div>
         </div>

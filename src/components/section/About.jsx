@@ -1,22 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import RevealOnScroll from "../RevealOnScroll";
 
 const About = () => {
   const frontendSkills = [
     "React",
-    "Vue",
     "TypeScript",
     "TailwindCSS",
-    "Angular",
+    "Bootstrap",
     "React Native",
   ];
-  const backendSkills = ["Java", "C#", ".NET", "PHP", "Laravel", "Go"];
+  const backendSkills = [
+    "Java",
+    "C#",
+    ".NET",
+    "PHP",
+    "Laravel",
+    "Go",
+    "Spring Boot",
+  ];
   const certification = [
     "Junior Web Programming - BNSP",
     "Responsive Web - FreeCodeCamp",
-    "Programming - Digitalent",
+    "Programming - Digital Talent Scholarship",
     "Bank Jago: UI/UX Challenge",
+    "QUALITY ASSURANCE INTRODUCTION - MySkill",
   ];
+  const database = ["MySQL", "SQL Server", "PostgreSQL"];
+  const others = [
+    "Git",
+    "GitHub",
+    "GitLab",
+    "Postman",
+    "Figma",
+    "Trello",
+    "Crystal Report",
+  ];
+
+  const [showBm1Details, setShowBm1Details] = useState(false);
+  const [showEnigmaDetails, setShowEnigmaDetails] = useState(false);
+  const [showLingvoDetails, setShowLingvoDetails] = useState(false);
+  const [showLepkomDetails, setShowLepkomDetails] = useState(false);
+  const [showNoidDetails, setShowNoidDetails] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -112,10 +136,10 @@ const About = () => {
 
                   <div className="rounded-xl p-6 bg-gray-800/20 hover:-translate-y-1 hover:bg-gray-800/40 transition-all duration-300">
                     <h3 className="text-xl font-bold mb-4 text-blue-400">
-                      Certification
+                      Database
                     </h3>
                     <div className="flex flex-wrap gap-2">
-                      {certification.map((tech, key) => (
+                      {database.map((tech, key) => (
                         <span
                           key={key}
                           className="bg-blue-500/10 text-blue-400 py-1 px-3 rounded-full text-sm border border-blue-500/20 hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all duration-200"
@@ -124,6 +148,37 @@ const About = () => {
                         </span>
                       ))}
                     </div>
+                  </div>
+
+                  <div className="rounded-xl p-6 bg-gray-800/20 hover:-translate-y-1 hover:bg-gray-800/40 transition-all duration-300">
+                    <h3 className="text-xl font-bold mb-4 text-blue-400">
+                      Others
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {others.map((tech, key) => (
+                        <span
+                          key={key}
+                          className="bg-blue-500/10 text-blue-400 py-1 px-3 rounded-full text-sm border border-blue-500/20 hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all duration-200"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="rounded-xl p-6 mt-4 bg-gray-800/20 hover:-translate-y-1 hover:bg-gray-800/40 transition-all duration-300">
+                  <h3 className="text-xl font-bold mb-4 text-blue-400">
+                    Certification
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {certification.map((tech, key) => (
+                      <span
+                        key={key}
+                        className="bg-blue-500/10 text-blue-400 py-1 px-3 rounded-full text-sm border border-blue-500/20 hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all duration-200"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -142,16 +197,27 @@ const About = () => {
                   <div className="space-y-3 text-gray-300">
                     <div>
                       <h4 className="font-semibold text-white">
-                        S.Kom in Computer Science
+                        Bachelor in Computer Science
                       </h4>
                       <p className="text-gray-400 text-sm">
-                        Gunadarma University (2019 - 2023)
+                        Gunadarma University (Jun 2019 - Sep 2023)
                       </p>
                     </div>
                     <div>
-                      <p className="text-gray-300">
-                        <strong>Relevant Coursework:</strong> Data Structures,
-                        Web Development, Cloud Computing
+                      <h4 className="font-semibold text-white">
+                        UI/UX Design Mastery By Skilvul
+                      </h4>
+                      <p className="text-gray-400 text-sm">
+                        Certificate in UI/UX Student (Aug 2022 - Dec 2022)
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">
+                        GIGIH 2.0 By Yayasan Anak Bangsa Bisa
+                      </h4>
+                      <p className="text-gray-400 text-sm">
+                        Certificate in Frontend Track Student (Feb 2022 - Aug
+                        2022)
                       </p>
                     </div>
                   </div>
@@ -169,28 +235,112 @@ const About = () => {
                   <div className="space-y-4 text-gray-300">
                     <div className="border-l-2 border-blue-500 pl-4">
                       <h4 className="font-semibold text-white">
-                        Fullstack Engineer at BM1OIL
+                        Fullstack Developer
                       </h4>
                       <p className="text-gray-400 text-sm mb-2">
-                        2024 - Present
+                        BM1OIL (May 2024 - Present)
                       </p>
                       <p className="text-gray-300">
-                        Developing full-stack applications with modern
-                        technologies, focusing on scalable architecture and user
-                        experience.
+                        Led internal system development for 13 branches, focused
+                        on reporting tools and infrastructure optimization.
                       </p>
+                      {showBm1Details && (
+                        <ul className="list-disc text-sm mt-2 pl-5 text-gray-400 space-y-1">
+                          <li>
+                            Built and maintained financial modules (AR, AP,
+                            Taxation, Coretax).
+                          </li>
+                          <li>
+                            Managed and secured company website & internal
+                            applications.
+                          </li>
+                          <li>
+                            Collaborated with leadership on strategic IT
+                            decisions.
+                          </li>
+                          <li>
+                            Ensured high security and performance across
+                            infrastructure.
+                          </li>
+                        </ul>
+                      )}
+                      <button
+                        onClick={() => setShowBm1Details(!showBm1Details)}
+                        className="text-cyan-400 text-sm mt-2 cursor-pointer"
+                      >
+                        {showBm1Details ? "Show less" : "Show more"}
+                      </button>
                     </div>
                     <div className="border-l-2 border-cyan-500 pl-4">
                       <h4 className="font-semibold text-white">
-                        Software Development Intern
+                        Fullstack Developer Trainee & Talent
                       </h4>
                       <p className="text-gray-400 text-sm mb-2">
-                        Previous Role
+                        Enigma Camp (Nov 2023 - May 2024)
                       </p>
                       <p className="text-gray-300">
-                        Gained hands-on experience in application development,
-                        working with cross-functional teams on various projects.
+                        Completed fullstack training focused on modern
+                        development stacks and real-world project delivery.
                       </p>
+                      {showEnigmaDetails && (
+                        <ul className="list-disc text-sm mt-2 pl-5 text-gray-400 space-y-1">
+                          <li>Developed backend APIs with Java Spring Boot.</li>
+                          <li>
+                            Built frontend features with React and styled with
+                            Tailwind.
+                          </li>
+                          <li>Created mobile apps using React Native.</li>
+                          <li>
+                            Worked with PostgreSQL & MySQL for relational
+                            database design.
+                          </li>
+                        </ul>
+                      )}
+                      <button
+                        onClick={() => setShowEnigmaDetails(!showEnigmaDetails)}
+                        className="text-cyan-400 text-sm mt-2"
+                      >
+                        {showEnigmaDetails ? "Show less" : "Show more"}
+                      </button>
+                    </div>
+                    <div className="border-l-2 border-green-300 pl-4">
+                      <h4 className="font-semibold text-white">
+                        Teaching Assistant
+                      </h4>
+                      <p className="text-gray-400 text-sm mb-2">
+                        Lembaga Pengembangan Komputerisasi Universitas Gunadarma
+                        (Oct 2021 - Oct 2021)
+                      </p>
+                      <p className="text-gray-300">
+                        Assisted tutors in delivering technical training
+                      </p>
+                      {showLepkomDetails && (
+                        <ul className="list-disc text-sm mt-2 pl-5 text-gray-400 space-y-1">
+                          <li>
+                            Developed and prepared teaching materials to support
+                            tutors.
+                          </li>
+                          <li>Analyzed scores to measure learning outcomes.</li>
+                          <li>
+                            Assisted during Q&A sessions for better student
+                            engagement.
+                          </li>
+                          <li>
+                            Studied and applied networking with Cisco & MikroTik
+                            technologies.
+                          </li>
+                          <li>
+                            Built a scalable data collection site using Go
+                            language.
+                          </li>
+                        </ul>
+                      )}
+                      <button
+                        onClick={() => setShowLepkomDetails(!showLepkomDetails)}
+                        className="text-cyan-400 text-sm mt-2"
+                      >
+                        {showLepkomDetails ? "Show less" : "Show more"}
+                      </button>
                     </div>
                   </div>
                 </div>
