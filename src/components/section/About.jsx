@@ -349,7 +349,7 @@ const About = () => {
                         Fullstack Developer
                       </h4>
                       <p className="text-gray-400 text-sm mb-2">
-                        BM1OIL (May 2024 - Present)
+                        BM1 OIL (May 2024 - Present)
                       </p>
                       <p className="text-gray-300">
                         Led internal system development for 13 branches, focused
@@ -536,7 +536,9 @@ const About = () => {
                       <p className="text-gray-400 text-sm mb-2">
                         Internship (Sep 2017 - Dec 2017)
                       </p>
-                      <p className="text-gray-300">Redesign website frontend</p>
+                      <p className="text-gray-300">
+                        Redesign frontend website{" "}
+                      </p>
                       {visibleDetail === "noid" && (
                         <ul className="list-disc text-sm mt-2 pl-5 text-gray-400 space-y-1">
                           <li>
