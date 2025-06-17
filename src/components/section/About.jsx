@@ -80,7 +80,7 @@ const About = () => {
               <div className="rounded-xl p-8 bg-gray-800/30 border-white/10 border hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_12px_rgba(59,130,246,0.1)] transition-all duration-300">
                 <div className="flex justify-center mb-4">
                   <img
-                    src="/assets/images/photo.jpeg"
+                    src="/assets/images/pp2.jpeg"
                     alt="..."
                     className="w-[300px] h-[300px] rounded-full object-cover border-2 border-blue-500 shadow-md"
                   />
