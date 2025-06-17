@@ -430,15 +430,30 @@ const About = () => {
                       </p>
                       {visibleDetail === "enigma" && (
                         <ul className="list-disc text-sm mt-2 pl-5 text-gray-400 space-y-1">
-                          <li>Developed backend APIs with Java Spring Boot.</li>
                           <li>
-                            Built frontend features with React and styled with
-                            Tailwind.
+                            Gaining hands-on experience in backend application
+                            development using Java Spring Boot and implementing
+                            best practices in API development.
                           </li>
-                          <li>Created mobile apps using React Native.</li>
                           <li>
-                            Worked with PostgreSQL & MySQL for relational
-                            database design.
+                            Gaining proficiency in frontend web development by
+                            building user interfaces and interactive features
+                            with React JS.
+                          </li>
+                          <li>
+                            Acquiring skills in mobile application development
+                            using React Native to create cross-platform apps.
+                          </li>
+                          <li>
+                            Learning to design and implement database solutions
+                            using PostgreSQL and MySQL for efficient data
+                            management.
+                          </li>
+                          <li>
+                            {" "}
+                            Exploring and applying various programming languages
+                            and frameworks to enhance versatility and expand
+                            technical expertise.
                           </li>
                         </ul>
                       )}
@@ -531,10 +546,10 @@ const About = () => {
 
                     <div className="border-l-2 border-yellow-300 pl-4">
                       <h4 className="font-semibold text-white">
-                        Frontend Web Developer
+                        Frontend Web Developer Intern
                       </h4>
                       <p className="text-gray-400 text-sm mb-2">
-                        Internship (Sep 2017 - Dec 2017)
+                        Noid+ Digital Agency (Sep 2017 - Dec 2017)
                       </p>
                       <p className="text-gray-300">
                         Redesign frontend website{" "}

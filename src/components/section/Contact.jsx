@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import RevealOnScroll from "../RevealOnScroll";
 import emailjs from "emailjs-com";
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaInstagram,
+  FaMediumM,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +15,39 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  const socialLinks = [
+    {
+      name: "GitHub",
+      icon: FaGithub,
+      url: "https://github.com/Daexaf",
+      color: "hover:text-gray-300",
+    },
+    {
+      name: "LinkedIn",
+      icon: FaLinkedinIn,
+      url: "https://www.linkedin.com/in/muhammad-ihsan-64-mi/",
+      color: "hover:text-blue-400",
+    },
+    {
+      name: "Instagram",
+      icon: FaInstagram,
+      url: "https://instagram.com/ihsan64.mi",
+      color: "hover:text-pink-400",
+    },
+    {
+      name: "Medium",
+      icon: FaMediumM,
+      url: "https://medium.com/@ihsan64.mi",
+      color: "hover:text-green-400",
+    },
+    {
+      name: "WhatsApp",
+      icon: FaWhatsapp,
+      url: "https://wa.me/6281211960435",
+      color: "hover:text-green-500",
+    },
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,7 +76,7 @@ const Contact = () => {
       <RevealOnScroll>
         <div className="w-full max-w-md sm:max-w-lg md:max-w-2xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            Get In Touch
+            Get in Touch
           </h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <input
@@ -85,6 +125,28 @@ const Contact = () => {
               Send Message
             </button>
           </form>
+          <div className="mt-12 pt-8 border-t border-white/10">
+            <h3 className="text-xl font-semibold text-center text-gray-300 mb-6">
+              Connect with me
+            </h3>
+            <div className="flex justify-center items-center gap-6">
+              {socialLinks.map((social, index) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-gray-400 ${social.color} text-2xl transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-[0_4px_12px_rgba(255,255,255,0.1)]`}
+                    aria-label={social.name}
+                  >
+                    <IconComponent />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </RevealOnScroll>
     </section>

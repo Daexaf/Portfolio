@@ -39,18 +39,19 @@ const Projects = () => {
             {/* Project 1 */}
             <RevealOnScroll delay={0}>
               <div className="reveal-container">
-                <div className="p-6 rounded-xl bg-gray-800/50 border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
+                <div className="p-6 rounded-xl bg-gray-800/50 border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all h-full flex flex-col">
                   <h3 className="text-xl font-bold mb-2">
                     BM1 Official Website
                   </h3>
                   <p className="text-gray-400 mb-4">
-                    The website is built with a robust architecture, utilizing
+                    The website is built with a robust architecture using
                     Laravel 10 for the backend, ensuring smooth performance and
-                    scalability. MySQL is used for efficient database
-                    management, handling all the company's data securely.
-                    Additionally, I created an admin panel to manage content
-                    easily, allowing updates to be made without technical
-                    expertise.
+                    high scalability. MySQL powers the database management
+                    system, securely handling all company data. Additionally, I
+                    developed a user-friendly admin panel for easy content
+                    management. I also implemented detailed data views and
+                    integrated an email feature to facilitate seamless
+                    communication between users and the company.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {["PHP", "Laravel", "MySQL", "Figma"].map((tech, key) => (
@@ -62,7 +63,7 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center mt-auto">
                     <a
                       href="https://bm1-oil.com/home"
                       className="text-blue-400 hover:text-blue-300 transition-colors"
@@ -78,7 +79,7 @@ const Projects = () => {
             {/* Project 2 */}
             <RevealOnScroll delay={200}>
               <div className="reveal-container">
-                <div className="p-6 rounded-xl bg-gray-800/50 border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
+                <div className="p-6 rounded-xl bg-gray-800/50 border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all h-full flex flex-col">
                   <h3 className="text-xl font-bold mb-2">Kingkos App</h3>
                   <p className="text-gray-400 mb-4">
                     Kingkost App is endeavor involved the integration of React
@@ -106,7 +107,7 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center mt-auto">
                     <a
                       href="https://sites.google.com/view/websitecvihsan/projects"
                       className="text-blue-400 hover:text-blue-300 transition-colors"
@@ -122,7 +123,7 @@ const Projects = () => {
             {/* Project 3 */}
             <RevealOnScroll delay={400}>
               <div className="reveal-container">
-                <div className="p-6 rounded-xl bg-gray-800/50 border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
+                <div className="p-6 rounded-xl bg-gray-800/50 border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all h-full flex flex-col">
                   <h3 className="text-xl font-bold mb-2">ShopeyMart</h3>
                   <p className="text-gray-400 mb-4">
                     Shopeymart is a full-stack program for an Online Shopping
@@ -144,7 +145,7 @@ const Projects = () => {
                       )
                     )}
                   </div>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center mt-auto">
                     <a
                       href="https://sites.google.com/view/websitecvihsan/projects"
                       className="text-blue-400 hover:text-blue-300 transition-colors"
@@ -160,7 +161,7 @@ const Projects = () => {
             {/* Project 4 */}
             <RevealOnScroll delay={600}>
               <div className="reveal-container">
-                <div className="p-6 rounded-xl bg-gray-800/50 border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all">
+                <div className="p-6 rounded-xl bg-gray-800/50 border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all h-full flex flex-col">
                   <h3 className="text-xl font-bold mb-2">E-Duren Website</h3>
                   <p className="text-gray-400 mb-4">
                     This website to serve dine-in food orders at the Sop Duren
@@ -181,7 +182,7 @@ const Projects = () => {
                       )
                     )}
                   </div>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center mt-auto">
                     <a
                       href="https://sites.google.com/view/websitecvihsan/projects"
                       className="text-blue-400 hover:text-blue-300 transition-colors"
@@ -207,14 +208,14 @@ const Projects = () => {
                 <span className="mr-2">📄</span>Others Project
               </a>
 
-              <a
+              {/* <a
                 href="https://github.com/Daexaf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-blue-500/50 text-blue-500 py-3 px-6 rounded font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,_130,_246,_0.2)] hover:bg-blue-500/10 text-center"
               >
                 <span className="mr-2">💼</span>Open Github
-              </a>
+              </a> */}
             </div>
           </RevealOnScroll>
         </div>
